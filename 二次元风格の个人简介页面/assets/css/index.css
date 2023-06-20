@@ -1,0 +1,619 @@
+@keyframes user-img {
+    0% {
+        box-shadow: 0px 0px 0px 0px #6799fe
+    }
+
+    50% {
+        box-shadow: 0px 0px 100px 10px #6799fe
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px #6799fe
+    }
+}
+
+@keyframes show-skill {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1
+    }
+}
+
+@keyframes time-line-top {
+    0% {
+        transform: translateY(-25%);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1
+    }
+}
+
+@keyframes time-line-bottom {
+    0% {
+        transform: translateY(25%);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1
+    }
+}
+
+@font-face {
+    font-family: "OPPOSans-L";
+    font-weight: 1 999;
+    src: url("../fonts/OPPOSans-L.ttf")
+}
+
+html,
+body,
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+    min-width: 1920px;
+    min-height: 937px;
+    font-family: "OPPOSans-L"
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transition: all .3s ease;
+    min-width: 1920px;
+    min-height: 937px
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: #fff
+}
+
+.section.self {
+    background: url("../images/background.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.section.self .user-img {
+    width: 256px;
+    height: 256px;
+    border: 4px solid #6799fe;
+    border-radius: 50%;
+    animation: user-img 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear
+}
+
+.section.self .title {
+    font-size: 36px;
+    margin: 12px
+}
+
+.section.self .sub-title {
+    font-size: 24px;
+    margin: 12px
+}
+
+.section.self .text {
+    font-size: 24px;
+    margin: 12px
+}
+
+.section.skill {
+    background: url("../images/skill.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.section.skill .skill-pane {
+    padding-left: 200px;
+    width: 100%
+}
+
+.section.skill .skill-pane p:nth-child(2) {
+    margin-left: 6px
+}
+
+.section.skill .skill-pane p:nth-child(3) {
+    margin-left: 9px
+}
+
+.section.skill .skill-pane p:nth-child(4) {
+    margin-left: 12px
+}
+
+.section.skill .skill-pane p:nth-child(5) {
+    margin-left: 15px
+}
+
+.section.skill .skill-pane p:nth-child(6) {
+    margin-left: 18px
+}
+
+.section.skill .skill-pane p:nth-child(7) {
+    margin-left: 21px
+}
+
+.section.skill .skill-pane p:nth-child(8) {
+    margin-left: 24px
+}
+
+.section.skill .skill-pane p:nth-child(9) {
+    margin-left: 27px
+}
+
+.section.skill .skill-pane p:nth-child(10) {
+    margin-left: 30px
+}
+
+.section.skill .skill-pane p:nth-child(11) {
+    margin-left: 33px
+}
+
+.section.skill .skill-pane p:nth-child(12) {
+    margin-left: 36px
+}
+
+.section.skill .skill-pane p:nth-child(13) {
+    margin-left: 39px
+}
+
+.section.skill .skill-pane p:nth-child(14) {
+    margin-left: 42px
+}
+
+.section.skill .skill-pane p:nth-child(15) {
+    margin-left: 45px
+}
+
+.section.skill .skill-pane p:nth-child(16) {
+    margin-left: 48px
+}
+
+.section.skill .skill-pane p:nth-child(17) {
+    margin-left: 51px
+}
+
+.section.skill .skill-pane p:nth-child(18) {
+    margin-left: 54px
+}
+
+.section.skill .skill-pane p:nth-child(19) {
+    margin-left: 57px
+}
+
+.section.skill .skill-pane p:nth-child(20) {
+    margin-left: 60px
+}
+
+.section.skill .skill-pane p {
+    font-size: 28px;
+    margin: 12px 0;
+    opacity: 0
+}
+
+.section.skill .skill-pane p.title {
+    font-size: 36px
+}
+
+.section.skill .skill-pane .hr {
+    width: 450px;
+    border: none;
+    border-bottom: 1px solid #fff
+}
+
+.section.skill .skill-font {
+    position: absolute;
+    top: -64px;
+    right: -64px;
+    width: 256px;
+    height: 256px
+}
+
+.section.skill .skill-animation p:nth-child(1) {
+    animation: show-skill 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(2) {
+    animation: show-skill 1s;
+    animation-delay: .4s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(3) {
+    animation: show-skill 1s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(4) {
+    animation: show-skill 1s;
+    animation-delay: .8s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(5) {
+    animation: show-skill 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(6) {
+    animation: show-skill 1s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(7) {
+    animation: show-skill 1s;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(8) {
+    animation: show-skill 1s;
+    animation-delay: 1.6s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(9) {
+    animation: show-skill 1s;
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(10) {
+    animation: show-skill 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(11) {
+    animation: show-skill 1s;
+    animation-delay: 2.2s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(12) {
+    animation: show-skill 1s;
+    animation-delay: 2.4s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(13) {
+    animation: show-skill 1s;
+    animation-delay: 2.6s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(14) {
+    animation: show-skill 1s;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(15) {
+    animation: show-skill 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(16) {
+    animation: show-skill 1s;
+    animation-delay: 3.2s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(17) {
+    animation: show-skill 1s;
+    animation-delay: 3.4s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(18) {
+    animation: show-skill 1s;
+    animation-delay: 3.6s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(19) {
+    animation: show-skill 1s;
+    animation-delay: 3.8s;
+    animation-fill-mode: forwards
+}
+
+.section.skill .skill-animation p:nth-child(20) {
+    animation: show-skill 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards
+}
+
+.section.time-line {
+    background: url("../images/time-line.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.section.time-line ul {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    position: relative
+}
+
+.section.time-line ul::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(45deg, #ff0000 0%, #ffb600 11%, #fff600 22%, #a5ff00 33%, #00a9ff 44%, #0400ff 55%, #8a00fc 66%, #ff00e9 77%, #ff0059 88%, #ff0000 100%)
+}
+
+.section.time-line ul li {
+    width: 100%;
+    height: 100%
+}
+
+.section.time-line ul li .time-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 400px;
+    height: 250px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    opacity: 0
+}
+
+.section.time-line ul li .time-card::before {
+    content: " ";
+    position: absolute;
+    right: calc(50% - 32px);
+    border-top: 32px solid rgba(0, 0, 0, 0);
+    border-right: 32px solid rgba(0, 0, 0, 0);
+    border-left: 32px solid rgba(0, 0, 0, 0);
+    border-bottom: 32px solid rgba(0, 0, 0, 0)
+}
+
+.section.time-line ul li .time-card p {
+    font-size: 18px;
+    margin: 4px 0
+}
+
+.section.time-line ul li .time-card p.title {
+    font-size: 32px;
+    margin-bottom: 8px
+}
+
+.section.time-line ul li:nth-child(odd) .time-card::before {
+    border-top: 32px solid #fff;
+    bottom: -64px
+}
+
+.section.time-line ul li:nth-child(even) .time-card::before {
+    border-bottom: 32px solid #fff;
+    top: -64px
+}
+
+.section.time-line ul li:nth-child(2n) .time-card {
+    position: absolute;
+    bottom: 0
+}
+
+.section.time-line .time-line-animation>li:nth-child(1) .time-card {
+    animation: time-line-top 1s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards
+}
+
+.section.time-line .time-line-animation>li:nth-child(2) .time-card {
+    animation: time-line-bottom 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards
+}
+
+.section.time-line .time-line-animation>li:nth-child(3) .time-card {
+    animation: time-line-top 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards
+}
+
+.section.hobby {
+    background: url("../images/hobby.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.section.hobby .contain {
+    flex-direction: row;
+    justify-content: space-around
+}
+
+.section.hobby .hobby-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 450px;
+    padding: 64px;
+    border-radius: 32px
+}
+
+.section.hobby .hobby-card.left {
+    background-color: rgba(255, 194, 204, .7)
+}
+
+.section.hobby .hobby-card.left .art {
+    border: 4px solid #f3add1
+}
+
+.section.hobby .hobby-card.mid {
+    background-color: rgba(149, 255, 184, .7)
+}
+
+.section.hobby .hobby-card.mid .art {
+    border: 4px solid #caf9d1
+}
+
+.section.hobby .hobby-card.right {
+    background-color: rgba(106, 178, 255, .7)
+}
+
+.section.hobby .hobby-card.right .art {
+    border: 4px solid #8ab4e9
+}
+
+.section.hobby .hobby-card .art {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 32px
+}
+
+.section.hobby .hobby-card p {
+    text-align: center;
+    margin: 4px 0
+}
+
+.section.hobby .hobby-card p.title {
+    font-size: 28px
+}
+
+.section.hobby .hobby-card p.sub-title {
+    font-size: 22px
+}
+
+.section.contact {
+    background: url("../images/contact.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000
+}
+
+.section.contact .title {
+    font-size: 64px
+}
+
+.section.contact .contact-pane {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 4px
+}
+
+.section.contact .contact-pane .contact-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 50%;
+    font-size: 20px
+}
+
+.section.contact .contact-pane .contact-item a {
+    width: 100px;
+    height: 100px
+}
+
+.section.contact .contact-pane .contact-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px
+}
+
+.section.contact .footer p {
+    font-size: 24px;
+    color: #fff;
+    text-align: center
+}
+
+.section .contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 80%
+}
+
+.section .contain .down-link {
+    position: absolute;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    transition: all .5s
+}
+
+.section .contain .down-link .down-img {
+    width: 48px;
+    height: 48px
+}
+
+.section .contain .down-link:hover {
+    opacity: .6
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%)
+}
+
+.controls ul {
+    list-style: none
+}
+
+.controls li {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .5s;
+    margin-top: 16px
+}
+
+.controls li.active {
+    background-color: #fff
+}

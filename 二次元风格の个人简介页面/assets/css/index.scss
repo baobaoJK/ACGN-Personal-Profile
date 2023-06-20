@@ -1,0 +1,481 @@
+// 头像动画
+@keyframes user-img {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+    }
+
+    50% {
+        box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px rgb(103, 153, 254);
+    }
+
+}
+
+// 文字动画
+@keyframes show-skill {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+// 时间线动画（上）
+@keyframes time-line-top {
+    0% {
+        transform: translateY(-25%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+// 时间线动画（下）
+@keyframes time-line-bottom {
+    0% {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+// 字体
+@font-face {
+    font-family: "OPPOSans-L";
+    font-weight: 1 999;
+    src: url("../fonts/OPPOSans-L.ttf");
+}
+
+// 主体
+html,
+body,
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+    min-width: 1920px;
+    min-height: 937px;
+    font-family: 'OPPOSans-L';
+}
+
+// 面板
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+    min-width: 1920px;
+    min-height: 937px;
+}
+
+// 页面
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+
+    // 自我介绍
+    &.self {
+        background: url("../images/background.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        // 头像
+        .user-img {
+            width: 256px;
+            height: 256px;
+            border: 4px solid rgb(103, 153, 254);
+            border-radius: 50%;
+            // box-shadow: 0px 0px 100px 10px rgb(103, 153, 254);
+            animation: user-img 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        // 标题
+        .title {
+            font-size: 36px;
+            margin: 12px;
+        }
+
+        // 副标题
+        .sub-title {
+            font-size: 24px;
+            margin: 12px;
+        }
+
+        // 文本
+        .text {
+            font-size: 24px;
+            margin: 12px;
+        }
+
+    }
+
+    // 技能介绍
+    &.skill {
+        background: url("../images/skill.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        // 技能面板
+        .skill-pane {
+            padding-left: 200px;
+            width: 100%;
+
+            // 循环文本
+            @for $i from 2 through 20 {
+                p:nth-child(#{$i}) {
+                    margin-left: (3px * $i);
+                }
+            }
+
+            p {
+                font-size: 28px;
+                margin: 12px 0;
+                opacity: 0;
+
+                &.title {
+                    font-size: 36px;
+                }
+            }
+
+            // 分割线
+            .hr {
+                width: 450px;
+                border: none;
+                border-bottom: 1px solid white;
+            }
+        }
+
+        // 技能标题
+        .skill-font {
+            position: absolute;
+            top: -64px;
+            right: -64px;
+            width: 256px;
+            height: 256px;
+        }
+
+        // 技能文字动画
+        .skill-animation {
+
+            @for $i from 1 through 20 {
+                p:nth-child(#{$i}) {
+                    animation: show-skill 1s;
+                    animation-delay: ($i * 0.2s);
+                    animation-fill-mode: forwards;
+                }
+            }
+
+        }
+    }
+
+    // 时间线
+    &.time-line {
+        background: url("../images/time-line.jpg");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        ul {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            position: relative;
+
+            // 时间线
+            &::before {
+                content: ' ';
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                height: 2px;
+                // background-color: white;
+                background: linear-gradient(45deg, #ff0000 0%, #ffb600 11%, #fff600 22%, #a5ff00 33%, #00a9ff 44%, #0400ff 55%, #8a00fc 66%, #ff00e9 77%, #ff0059 88%, #ff0000 100%);
+            }
+
+            li {
+                width: 100%;
+                height: 100%;
+
+                // 时间线卡片
+                .time-card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    width: 400px;
+                    height: 250px;
+                    color: black;
+                    background-color: white;
+                    border-radius: 16px;
+                    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+                    opacity: 0;
+
+                    // 箭头
+                    &::before {
+                        content: ' ';
+                        position: absolute;
+                        right: calc(50% - 32px);
+                        border-top: 32px solid transparent;
+                        border-right: 32px solid transparent;
+                        border-left: 32px solid transparent;
+                        border-bottom: 32px solid transparent;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        margin: 4px 0;
+
+                        &.title {
+                            font-size: 32px;
+                            margin-bottom: 8px;
+                        }
+                    }
+                }
+
+                &:nth-child(odd) .time-card::before {
+                    border-top: 32px solid white;
+                    bottom: -64px;
+                }
+
+                &:nth-child(even) .time-card::before {
+                    border-bottom: 32px solid white;
+                    top: -64px;
+                }
+            }
+
+            li:nth-child(2n) .time-card {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        // 时间线面板动画
+        .time-line-animation {
+            @for $i from 1 through 3 {
+                &>li:nth-child(#{$i}) .time-card {
+                    @if ($i % 2)==1 {
+                        animation: time-line-top 1s;
+                    }
+
+                    @else {
+                        animation: time-line-bottom 1s;
+
+                    }
+
+                    animation-delay: ($i * 0.5s);
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+
+    // 爱好介绍
+    &.hobby {
+        background: url("../images/hobby.png");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .contain {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        // 爱好介绍卡片
+        .hobby-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 280px;
+            height: 450px;
+            padding: 64px;
+            border-radius: 32px;
+
+            &.left {
+                background-color: rgb(255, 194, 204, 0.7);
+
+                .art {
+                    border: 4px solid #f3add1;
+                }
+            }
+
+            &.mid {
+                background-color: rgba(149, 255, 184, 0.7);
+
+                .art {
+                    border: 4px solid #caf9d1;
+                }
+            }
+
+            &.right {
+                background-color: rgba(106, 178, 255, 0.7);
+
+                .art {
+                    border: 4px solid #8ab4e9;
+                }
+            }
+
+            // 头像
+            .art {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin-bottom: 32px;
+            }
+
+            p {
+                text-align: center;
+                margin: 4px 0;
+
+                &.title {
+                    font-size: 28px;
+                }
+
+                &.sub-title {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    // 联系方式
+    &.contact {
+        background: url("../images/contact.jpg");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: black;
+
+        .title {
+            font-size: 64px;
+        }
+
+        // 联系方式面版
+        .contact-pane {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 1200px;
+            height: 600px;
+            background-color: rgb(255, 255, 255, 0.5);
+            border-radius: 4px;
+
+            // 联系方式组件
+            .contact-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 25%;
+                height: 50%;
+                font-size: 20px;
+
+                a {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 16px;
+                }
+            }
+        }
+
+        // 页脚
+        .footer {
+            p {
+                font-size: 24px;
+                color: white;
+                text-align: center;
+            }
+        }
+    }
+
+    // 容器
+    .contain {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 80%;
+        height: 80%;
+
+        // 下滑按钮
+        .down-link {
+            position: absolute;
+            bottom: 0;
+            width: 48px;
+            height: 48px;
+            transition: all .5s;
+
+            .down-img {
+                width: 48px;
+                height: 48px;
+            }
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+// 侧边按钮
+.controls {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        width: 12px;
+        height: 12px;
+        border: 1px solid white;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.5s;
+        margin-top: 16px;
+    }
+
+    li.active {
+        background-color: #fff;
+    }
+}
