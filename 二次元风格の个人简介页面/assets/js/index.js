@@ -1,99 +1,147 @@
-// 获取 container
-const container = document.querySelector('.container');
-// 获取 lis
-const lis = document.querySelectorAll('.controls li');
-// 获取 downs
-const downs = document.querySelectorAll('.down-link');
-// 声明页面高度
-let viewHeight = document.body.clientHeight;
-// 索引号
-let index = 0;
-// 是否滚动
-let rolls = false;
+$(function () {
 
-// 窗体改动事件
-const getWindowInfo = () => {
-    viewHeight = document.body.clientHeight;
-    roll(index);
-};
-// 添加窗体改动事件
-window.addEventListener('resize', getWindowInfo);
+    // 动画播放时间
+    const animationTime = 500;
 
-// 鼠标滚动事件
-const mouseRoll = (e) => {
-    // 判断是否在滚动
-    if (!rolls) {
-        // 判断鼠标滚动
-        if (e.wheelDelta > 0) {
-            if (--index < 0) {
-                index = 0;
+    // 获取画布
+    const container = $('.container');
+
+    // 获取侧边栏按钮
+    const lis = $('.controls li');
+
+    // 获取 downs
+    const downs = $('.down-link');
+
+    // 网页窗口宽度
+    let viewWidth = null;
+
+    // 网页窗口高度
+    let viewHeight = null;
+
+    // 屏幕索引
+    let index = 0;
+
+    // 检测是否在滚动
+    let roll = false;
+
+    // 鼠标滚动事件
+    const mousewheel = (e) => {
+        // 判断是否在滚动
+        if (!roll) {
+            roll = true;
+
+            // 判断向上滚动还是向下滚动
+            if (e.originalEvent.wheelDelta > 0 && index > 0) {
+                // 向上滚动
+                index--;
+            } else if (e.originalEvent.wheelDelta < 0 && index < lis.length - 1) {
+                // 向下滚动
+                index++;
             }
-        } else {
-            if (++index > lis.length - 1) {
-                index = lis.length - 1;
-            }
+
+            // 滚动屏幕
+            rollScenes();
+        }
+    }
+
+    // 添加鼠标滚动监听
+    $(document).on('mousewheel', mousewheel);
+
+    // 滚动视图
+    const rollScenes = () => {
+
+        // 添加动画
+        if (index == 1) {
+            $('.skill-pane').addClass('skill-animation');
+        }
+        if (index == 2) {
+            $('.time-ul').addClass('time-line-animation');
         }
 
-        // 滚动页面
-        roll(index);
-    }
-};
+        // 获取屏幕宽度
+        viewWidth = $(document).width();
 
-// 添加滚动事件
-document.addEventListener('mousewheel', mouseRoll);
+        // 获取屏幕高度
+        viewHeight = $(document).height();
 
-// 绑定点击事件
-for (let i = 0; i < lis.length; i++) {
-    lis[i].onclick = function () {
-        index = i;
-        roll(index);
-    }
-}
+        // 添加动画
+        container.addClass("container-animation");
 
-// 绑定点击事件
-for (let i = 0; i < downs.length; i++) {
-    downs[i].onclick = function () {
-        index = i + 1;
-        roll(index);
-    }
-}
+        // 更改位置
+        container.css('top', -index * viewHeight + 'px');
 
-// 改变li的颜色
-function changeColor(index) {
+        // 更改侧边栏样式
+        changeLocation(index);
+
+        // 更改状态
+        setTimeout(function () {
+            roll = false;
+            container.removeClass("container-animation");
+
+            // 删除动画
+            if (index != 1) {
+                $('.skill-pane').removeClass('skill-animation');
+            }
+            if (index != 2) {
+                $('.time-ul').removeClass('time-line-animation');
+            }
+        }, animationTime);
+    };
+
+    //绑定点击事件
     for (let i = 0; i < lis.length; i++) {
-        lis[i].className = '';
-    }
-    lis[index].className = 'active';
-}
+        // 给每个 li 添加点击事件
+        lis[i].onclick = function () {
 
-function roll(index) {
-    rolls = true;
-
-    // 添加动画
-    if (index == 1) {
-        document.querySelector('.skill-pane').classList.add('skill-animation');
-    }
-    if (index == 2) {
-        document.querySelector('.time-ul').classList.add('time-line-animation');
-    }
-
-    // 滚动页面
-    container.style.top = -index * viewHeight + 'px';
-
-    // 改变颜色
-    changeColor(index);
-
-    // 添加延迟
-    setTimeout(function () {
-        // 滚动取消
-        rolls = false;
-
-        // 删除动画
-        if (index != 1) {
-            document.querySelector('.skill-pane').classList.remove('skill-animation');
+            // 判断是否在滚动
+            if (!roll) {
+                roll = true;
+                // 这里的 index 等于 li 的下标
+                index = i;
+                rollScenes();
+            }
         }
-        if (index != 2) {
-            document.querySelector('.time-ul').classList.remove('time-line-animation');
+    }
+
+    // 绑定点击事件
+    for (let i = 0; i < downs.length; i++) {
+        downs[i].onclick = function () {
+
+            // 判断是否在滚动
+            if (!roll) {
+                roll = true;
+                // 这里的 index 等于 li 的下标
+                index = i + 1;
+                rollScenes();
+            }
         }
-    }, 500);
-}
+    }
+
+    //修改 bar 位置
+    function changeLocation(index) {
+        $(".controls .bar").css('transform', 'translateY(' + index * 49 + 'px)');
+    }
+
+    // 窗体改动事件
+    const getWindowInfo = () => {
+        // 获取屏幕宽度
+        viewWidth = $(document).width();
+
+        // 获取屏幕高度
+        viewHeight = $(document).height();
+
+        // 更改位置
+        container.css('top', -index * viewHeight + 'px');
+
+        // 屏幕块
+        const section = $(".section");
+
+        // 设置样式
+        for (let i = 0; i < section.length; i++) {
+            section[i].setAttribute("style", "width: " + document.body.clientWidth + "px; height: " + document.body.clientHeight + "px");
+        }
+    };
+
+    // 添加窗体改动事件
+    $(window).on('resize', getWindowInfo);
+});
