@@ -219,6 +219,9 @@
     width: 4rem !important;
     height: 4rem !important;
   }
+  .contact .footer p {
+    color: gray !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   /* 在此添加针对平板屏幕的样式 */
@@ -337,6 +340,9 @@
     width: 4rem !important;
     height: 4rem !important;
   }
+  .contact .footer p {
+    color: gray !important;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1920px) {
   /* 在此添加针对电脑屏幕的样式 */
@@ -345,7 +351,7 @@
   }
 }
 html {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 html,
@@ -402,7 +408,7 @@ ul {
 }
 .section.self {
   background: url("../images/background.png");
-  background-size: auto auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -432,7 +438,7 @@ ul {
 }
 .section.skill {
   background: url("../images/skill.png");
-  background-size: auto auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -679,7 +685,7 @@ ul {
 }
 .section.time-line {
   background: url("../images/time-line.jpg");
-  background-size: auto auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -782,7 +788,7 @@ ul {
 }
 .section.hobby {
   background: url("../images/hobby.png");
-  background-size: auto auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -849,7 +855,7 @@ ul {
 }
 .section.contact {
   background: url("../images/contact.jpg");
-  background-size: auto auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: black;
@@ -901,7 +907,7 @@ ul {
 }
 .section.contact .footer p {
   font-size: 1.5rem;
-  color: gray;
+  color: white;
   text-align: center;
 }
 .section .contain {

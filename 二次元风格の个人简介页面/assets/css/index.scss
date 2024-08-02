@@ -182,6 +182,13 @@
         }
       }
     }
+
+    // 页脚
+    .footer {
+      p {
+        color: gray !important;
+      }
+    }
   }
 }
 
@@ -307,6 +314,13 @@
         }
       }
     }
+
+    // 页脚
+    .footer {
+      p {
+        color: gray !important;
+      }
+    }
   }
 }
 
@@ -318,7 +332,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 12px;
 }
 // 主体
 html,
@@ -369,7 +383,7 @@ ul {
   // 自我介绍
   &.self {
     background: url("../images/background.png");
-    background-size: auto auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -407,7 +421,7 @@ ul {
   // 技能介绍
   &.skill {
     background: url("../images/skill.png");
-    background-size: auto auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -465,7 +479,7 @@ ul {
   // 时间线
   &.time-line {
     background: url("../images/time-line.jpg");
-    background-size: auto auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -576,7 +590,7 @@ ul {
   // 爱好介绍
   &.hobby {
     background: url("../images/hobby.png");
-    background-size: auto auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -646,7 +660,7 @@ ul {
   // 联系方式
   &.contact {
     background: url("../images/contact.jpg");
-    background-size: auto auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: black;
@@ -692,7 +706,7 @@ ul {
     .footer {
       p {
         font-size: 1.5rem;
-        color: gray;
+        color: white;
         text-align: center;
       }
     }
