@@ -194,6 +194,120 @@
   .skill-pane {
     padding-left: 0 !important;
   }
+
+  // 时间线
+  .time-line {
+    ul {
+      flex-direction: column !important;
+      align-items: center !important;
+      height: 80% !important;
+
+      // 时间线
+      &::before {
+        content: "" !important;
+        background: none !important;
+      }
+
+      li {
+        position: relative !important;
+        margin-bottom: 1.5rem;
+        // 时间线卡片
+        .time-card {
+          width: 100% !important;
+          height: 100% !important;
+          // 箭头
+          &::before {
+            content: "" !important;
+          }
+        }
+
+        .time-card::before {
+          border: 0 !important;
+          top: 0 !important;
+        }
+      }
+
+      li:nth-child(2n) .time-card {
+        position: relative !important;
+      }
+    }
+
+    // 时间线面板动画
+    .time-line-animation {
+      @for $i from 1 through 3 {
+        & > li:nth-child(#{$i}) .time-card {
+          animation: time-line-top 1s !important;
+          animation-delay: ($i * 0.5s) !important;
+          animation-fill-mode: forwards !important;
+        }
+      }
+    }
+  }
+
+  // 爱好介绍
+  .hobby {
+    .contain {
+      flex-wrap: wrap !important;
+    }
+
+    // 爱好介绍卡片
+    .hobby-card {
+      width: 8.75rem !important;
+      height: 20rem !important;
+      padding: 2rem !important;
+      border-radius: 1rem !important;
+
+      // 头像
+      .art {
+        width: 6.25rem !important;
+        height: 6.25rem !important;
+      }
+
+      p {
+        &.title {
+          font-size: 0.875rem !important;
+        }
+
+        &.sub-title {
+          font-size: 0.6875rem !important;
+        }
+      }
+    }
+  }
+
+  // 联系方式
+  .contact {
+    .title {
+      font-size: 3rem !important;
+    }
+
+    // 联系方式面版
+    .contact-pane {
+      width: 32.5rem !important;
+      height: 18.75rem !important;
+
+      // 联系方式组件
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 50%;
+        font-size: 1rem !important;
+
+        a {
+          width: 4rem !important;
+          height: 4rem !important;
+        }
+
+        img {
+          width: 4rem !important;
+          height: 4rem !important;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1920px) {

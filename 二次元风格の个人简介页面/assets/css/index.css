@@ -228,6 +228,115 @@
   .skill-pane {
     padding-left: 0 !important;
   }
+  .time-line ul {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    height: 80% !important;
+  }
+  .time-line ul::before {
+    content: "" !important;
+    background: none !important;
+  }
+  .time-line ul li {
+    position: relative !important;
+    margin-bottom: 1.5rem;
+  }
+  .time-line ul li .time-card {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .time-line ul li .time-card::before {
+    content: "" !important;
+  }
+  .time-line ul li .time-card::before {
+    border: 0 !important;
+    top: 0 !important;
+  }
+  .time-line ul li:nth-child(2n) .time-card {
+    position: relative !important;
+  }
+  .time-line .time-line-animation > li:nth-child(1) .time-card {
+    -webkit-animation: time-line-top 1s !important;
+            animation: time-line-top 1s !important;
+    -webkit-animation-delay: 0.5s !important;
+            animation-delay: 0.5s !important;
+    -webkit-animation-fill-mode: forwards !important;
+            animation-fill-mode: forwards !important;
+  }
+  .time-line .time-line-animation > li:nth-child(2) .time-card {
+    -webkit-animation: time-line-top 1s !important;
+            animation: time-line-top 1s !important;
+    -webkit-animation-delay: 1s !important;
+            animation-delay: 1s !important;
+    -webkit-animation-fill-mode: forwards !important;
+            animation-fill-mode: forwards !important;
+  }
+  .time-line .time-line-animation > li:nth-child(3) .time-card {
+    -webkit-animation: time-line-top 1s !important;
+            animation: time-line-top 1s !important;
+    -webkit-animation-delay: 1.5s !important;
+            animation-delay: 1.5s !important;
+    -webkit-animation-fill-mode: forwards !important;
+            animation-fill-mode: forwards !important;
+  }
+  .hobby .contain {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  .hobby .hobby-card {
+    width: 8.75rem !important;
+    height: 20rem !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+  }
+  .hobby .hobby-card .art {
+    width: 6.25rem !important;
+    height: 6.25rem !important;
+  }
+  .hobby .hobby-card p.title {
+    font-size: 0.875rem !important;
+  }
+  .hobby .hobby-card p.sub-title {
+    font-size: 0.6875rem !important;
+  }
+  .contact .title {
+    font-size: 3rem !important;
+  }
+  .contact .contact-pane {
+    width: 32.5rem !important;
+    height: 18.75rem !important;
+  }
+  .contact .contact-pane .contact-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 25%;
+    height: 50%;
+    font-size: 1rem !important;
+  }
+  .contact .contact-pane .contact-item a {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+  .contact .contact-pane .contact-item img {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1920px) {
   /* 在此添加针对电脑屏幕的样式 */
